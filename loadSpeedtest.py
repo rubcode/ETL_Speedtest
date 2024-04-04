@@ -112,10 +112,10 @@ print("TERMINA BDCT.....")
 
 table = "speedtest_ips_"+month+"_"+str(year)
 engine = create_engine("mysql+pymysql://{user}:{pw}@{host}/{db}"
-                       .format(host = "10.192.132.69",
-                               user="Rriveror",
-                               pw="DucaTI&Hypermotard$939",
-                               db="speedtest"))
+                       .format(host = os.environ("host69"),
+                               user=os.environ("user69"),
+                               pw=os.environ("pass69"),
+                               db=os.environ("db69")))
 data.to_sql(table, con = engine, if_exists = 'append',chunksize=1000000,index=False)
 print("FIN DEL PROCESO")
 now = str(datetime.now()).split(".")[0]
